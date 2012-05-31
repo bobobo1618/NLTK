@@ -178,7 +178,7 @@ class MaxentClassifier(ClassifierI):
                                 reverse=True)
             for (f_id, f_val) in feature_vector:
                 if self._logarithmic: score = self._weights[f_id] * f_val
-                else: score = self._weights[fid] ** f_val
+                else: score = self._weights[f_id] ** f_val
                 descr = self._encoding.describe(f_id)
                 descr = descr.split(' and label is ')[0] # hack
                 descr += ' (%s)' % f_val                 # hack
@@ -394,7 +394,7 @@ class MaxentFeatureEncodingI(object):
         """
         raise NotImplementedError()
 
-    def train(cls, train_toks):
+    def train(self, cls, train_toks):
         """
         Construct and return new feature encoding, based on a given
         training corpus ``train_toks``.
