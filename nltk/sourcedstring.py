@@ -679,7 +679,7 @@ class SourcedString(object):
         return SourcedString.concat(result)
 
     @abstract
-    def _decode_one_to_one(unicode_chars):
+    def _decode_one_to_one(self, unicode_chars):
         """
         Helper for ``self.decode()``.  Returns a unicode-decoded
         version of this ``SourcedString``.  ``unicode_chars`` is the
